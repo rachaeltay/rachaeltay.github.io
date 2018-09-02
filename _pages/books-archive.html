@@ -1,0 +1,71 @@
+---
+layout: archive
+title: "Books"
+permalink: /books/
+author_profile: false
+---
+
+<div class="grid__wrapper">
+  {% for post in site.books %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
+</div>
+
+<div>
+<ul id="hexGrid">
+    <li class="hex">
+      <div class="hexIn">
+        <a class="hexLink" href="#">
+        <%= image_tag ".png", size: "90" %>
+        <h1>First</h1>
+        <p>First paragraph</p>
+        </a>
+      </div>
+    </li>
+    <li class="hex">
+      <div class="hexIn">
+        <a class="hexLink">
+        <%= image_tag ".png" %>
+        <h1>Second</h1>
+        <p>Second paragraph</p>
+        </a>
+      </div>
+    </li>
+    <li class="hex">
+      <div class="hexIn">
+        <a class="hexLink" href="#">
+          <%= image_tag ".png", size: "90" %>
+          <h1>Third</h1>
+          <p>Third paragraph</p>
+        </a>
+      </div>
+    </li>
+    <li class="hex">
+      <div class="hexIn">
+        <a class="hexLink" href="#">
+          <%= image_tag ".png"  %>
+          <h1>Fourth</h1>
+          <p>Fourth paragraph</p>
+        </a>
+      </div>
+    </li>
+    <li class="hex">
+      <div class="hexIn">
+        <a class="hexLink" href="#">
+          <%= image_tag ".png", size: "90" %>
+          <h1>Fifth</h1>
+          <p>Fifth paragraph</p>
+        </a>
+      </div>
+    </li>
+    <li class="hex">
+      <div class="hexIn">
+        <a class="hexLink" href="#">
+        <%= image_tag ".png", size: "90" %>
+        <h1>Sixth</h1>
+        <p>Sixth paragraph</p>
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
