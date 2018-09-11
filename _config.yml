@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en"
-title                    : "Rachael | Adventure Learn Hack"
+title                    : "Rachael Tay"
 title_separator          : "-"
 name                     : "Rachael Tay"
-description              : "Personal website - for fun"
+description              : "Personal website"
 url                      : "https://rachaeltay.github.io"
 baseurl                  : "/"
 repository               : "rachaeltay/rachaeltay.github.io"
@@ -232,15 +232,23 @@ compress_html:
 
 
 # Defaults
+# defaults:
+#   # _posts
+#   - scope:
+#       path: ""
+#       type: posts
+#     values:
+#       layout: single
+#       author_profile: true
+#       read_time: true
+#       comments: # true
+#       share: true
+#       related: true
+
 defaults:
-  # _posts
+  # _pages
   - scope:
       path: ""
-      type: posts
+      type: pages
     values:
       layout: single
-      author_profile: true
-      read_time: true
-      comments: # true
-      share: true
-      related: true
