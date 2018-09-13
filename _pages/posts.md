@@ -1,5 +1,0 @@
----
-permalink: /posts/
----
-
-## Posts
