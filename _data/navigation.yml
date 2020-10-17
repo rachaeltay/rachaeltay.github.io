@@ -1,0 +1,10 @@
+# main links
+main:
+  - title: "About"
+    url: https://rachaeltay.github.io/about/
+  - title: "Posts"
+    url: https://rachaeltay.github.io//categories/#posts
+  - title: "Books"
+    url: https://rachaeltay.github.io/books/
+  - title: "Portfolio"
+    url: https://rachaeltay.github.io/portfolio/
