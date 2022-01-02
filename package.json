@@ -12,7 +12,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "predeploy": "yarn",
+    "predeploy": "yarn && next build",
     "deploy": "gh-pages -b master -d build",
     "export": "next export"
   },
