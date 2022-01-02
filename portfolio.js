@@ -5,7 +5,7 @@ export const greetings = {
 	title: "Hi all, I'm Rachael Tay",
 	description:
 		"A passionate Frontend Developer with an interest in User Experience and Machine Learning",
-	// resumeLink: "https://cv.hanzla.ga",
+	// resumeLink: "https://github.com/rachaeltay/rachaeltay.github.iohttps://cv.hanzla.",
 };
 
 export const openSource = {
