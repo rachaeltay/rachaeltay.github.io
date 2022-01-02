@@ -1,62 +1,87 @@
 {
-  "../node_modules/next/dist/client/next-dev.js -> ./dev/noop": {
-    "id": "./node_modules/next/dist/client/dev/noop.js",
+  "../node_modules/next/dist/client/index.js -> ../pages/_error": {
+    "id": 9651,
     "files": [
-      "static/chunks/node_modules_next_dist_client_dev_noop_js.js"
+      "static/chunks/commons-6712bdb8e09fb98c.js",
+      "static/chunks/651.4f84384322828b93.js"
     ]
   },
   "index.js -> ../components/GithubProfileCard": {
-    "id": "./components/GithubProfileCard.jsx",
+    "id": 9474,
     "files": [
-      "static/chunks/components_GithubProfileCard_jsx.js"
+      "static/chunks/8710b798.b522f7482aec1c5a.js",
+      "static/chunks/commons-6712bdb8e09fb98c.js",
+      "static/chunks/675.eb1038430c99e346.js",
+      "static/chunks/474.5d4d0a07323c8b6e.js"
     ]
   },
   "index.js -> ../components/Navigation": {
-    "id": "./components/Navigation.jsx",
+    "id": 7815,
     "files": [
-      "static/chunks/components_Navigation_jsx.js"
+      "static/chunks/8710b798.b522f7482aec1c5a.js",
+      "static/chunks/commons-6712bdb8e09fb98c.js",
+      "static/chunks/815.368c038c9613004d.js"
     ]
   },
   "index.js -> ../containers/Education": {
-    "id": "./containers/Education.jsx",
+    "id": 3216,
     "files": [
-      "static/chunks/containers_Education_jsx.js"
+      "static/chunks/8710b798.b522f7482aec1c5a.js",
+      "static/chunks/commons-6712bdb8e09fb98c.js",
+      "static/chunks/216.c5b4decc1a2f40f8.js"
     ]
   },
   "index.js -> ../containers/Experience": {
-    "id": "./containers/Experience.jsx",
+    "id": 9714,
     "files": [
-      "static/chunks/containers_Experience_jsx.js"
+      "static/chunks/8710b798.b522f7482aec1c5a.js",
+      "static/chunks/commons-6712bdb8e09fb98c.js",
+      "static/chunks/675.eb1038430c99e346.js",
+      "static/chunks/210.b74edad375f43c75.js",
+      "static/chunks/714.b02c925ff9cfc55b.js"
     ]
   },
   "index.js -> ../containers/Feedbacks": {
-    "id": "./containers/Feedbacks.jsx",
+    "id": 6647,
     "files": [
-      "static/chunks/containers_Feedbacks_jsx.js"
+      "static/chunks/8710b798.b522f7482aec1c5a.js",
+      "static/chunks/commons-6712bdb8e09fb98c.js",
+      "static/chunks/647.92b3e280851c0430.js"
     ]
   },
   "index.js -> ../containers/Greetings": {
-    "id": "./containers/Greetings.jsx",
+    "id": 32,
     "files": [
-      "static/chunks/containers_Greetings_jsx.js"
+      "static/chunks/8710b798.b522f7482aec1c5a.js",
+      "static/chunks/ea88be26.9c1bc965bb5248dc.js",
+      "static/chunks/commons-6712bdb8e09fb98c.js",
+      "static/chunks/32.c3885e3f89e132be.js"
     ]
   },
   "index.js -> ../containers/Proficiency": {
-    "id": "./containers/Proficiency.jsx",
+    "id": 7182,
     "files": [
-      "static/chunks/containers_Proficiency_jsx.js"
+      "static/chunks/8710b798.b522f7482aec1c5a.js",
+      "static/chunks/ea88be26.9c1bc965bb5248dc.js",
+      "static/chunks/commons-6712bdb8e09fb98c.js",
+      "static/chunks/182.92db57388dc78933.js"
     ]
   },
   "index.js -> ../containers/Projects": {
-    "id": "./containers/Projects.jsx",
+    "id": 1475,
     "files": [
-      "static/chunks/containers_Projects_jsx.js"
+      "static/chunks/8710b798.b522f7482aec1c5a.js",
+      "static/chunks/commons-6712bdb8e09fb98c.js",
+      "static/chunks/475.917142b1c0ce609c.js"
     ]
   },
   "index.js -> ../containers/Skills": {
-    "id": "./containers/Skills.jsx",
+    "id": 2745,
     "files": [
-      "static/chunks/containers_Skills_jsx.js"
+      "static/chunks/8710b798.b522f7482aec1c5a.js",
+      "static/chunks/ea88be26.9c1bc965bb5248dc.js",
+      "static/chunks/commons-6712bdb8e09fb98c.js",
+      "static/chunks/745.016f6b80614d822f.js"
     ]
   }
 }

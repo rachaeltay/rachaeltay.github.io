@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
 
 import { greetings, socialLinks } from "../portfolio";
 import Headroom from "headroom.js";
