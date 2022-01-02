@@ -13,7 +13,7 @@
 		"start": "next start",
 		"lint": "next lint",
 		"predeploy": "npm run build",
-		"deploy": "gh-pages -b master -d build",
+		"deploy": "gh-pages -b main -d build",
 		"export": "next export"
 	},
 	"dependencies": {
