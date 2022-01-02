@@ -23,7 +23,7 @@ export default function Home({ githubProfileData }) {
 					description:
 						"A passionate Frontend Developer and API Developer.",
 					image: "https://avatars3.githubusercontent.com/u/59178380?v=4",
-					url: "https://developer-portfolio-1hanzla100.vercel.app",
+					url: "https://github.com/rachaeltay/rachaeltay.github.io",
 					keywords: [
 						"Rachael",
 						"Rachael Tay",
