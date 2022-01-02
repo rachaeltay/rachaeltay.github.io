@@ -4,6 +4,7 @@
 	"description": "Rachael's Software Engineer Portfolio",
 	"main": "index.js",
 	"repository": "https://github.com/rachaeltay/rachaeltay.github.io.git",
+	"homepage": "https://rachaeltay.github.io",
 	"author": "Rachael Tay",
 	"license": "MIT",
 	"scripts": {
@@ -11,8 +12,8 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"predeploy": "yarn",
-		"deploy": "next build && next export -o docs && git checkout -- docs/CNAME && git checkout -- docs/.nojekyll && git add docs && git commit -m \"chore: regen site\" && git push origin master",
+		"predeploy": "npm run build",
+    	"deploy": "gh-pages -b master -d build",
 		"export": "next export"
 	},
 	"dependencies": {
