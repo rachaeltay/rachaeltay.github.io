@@ -607,22 +607,9 @@ class Spectrum {
     }
 
     public getDistance(value: number): number[] {
-        let index;
         const distances = [];
 
-        for (index = 0; index < this.xNumSteps.length - 1; index++) {
-            // last "range" can't contain step size as it is purely an endpoint.
-            const step = this.xNumSteps[index];
-
-            if (step && (value / step) % 1 !== 0) {
-                throw new Error(
-                    "noUiSlider: 'limit', 'margin' and 'padding' of " +
-                        this.xPct[index] +
-                        "% range must be divisible by step."
-                );
-            }
-
-            // Calculate percentual distance in current range of limit, margin or padding
+        for (let index = 0; index < this.xNumSteps.length - 1; index++) {
             distances[index] = fromPercentage(this.xVal, value, index);
         }
 
@@ -2617,7 +2604,7 @@ function scope(target: TargetElement, options: ParsedOptions, originalOptions: O
         // Convert the value to the slider stepping/range.
         scope_Values[handleNumber] = scope_Spectrum.fromStepping(to);
 
-        const translation = 10 * (transformDirection(to, 0) - scope_DirOffset);
+        const translation = transformDirection(to, 0) - scope_DirOffset;
         const translateRule = "translate(" + inRuleOrder(translation + "%", "0") + ")";
 
         (scope_Handles[handleNumber].style as CSSStyleDeclarationIE10)[options.transformRule] = translateRule;
