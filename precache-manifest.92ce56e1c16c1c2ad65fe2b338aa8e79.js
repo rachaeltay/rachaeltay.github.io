@@ -1,31 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4b81ca95af89ad75c84e0aa0b4ae7afe",
+    "revision": "232b8b674ed687f7c1e50f5bd02dae3d",
     "url": "/index.html"
   },
   {
-    "revision": "d06bea7e3c6d9c5d1530",
-    "url": "/static/css/main.b5792bd0.chunk.css"
+    "revision": "e36446869740fcb55346",
+    "url": "/static/css/main.5cf43353.chunk.css"
   },
   {
-    "revision": "17ed3e9962eacf9cba50",
-    "url": "/static/js/2.c5f1a6af.chunk.js"
+    "revision": "3e620fb9048c1252e070",
+    "url": "/static/js/2.44b5fe21.chunk.js"
   },
   {
     "revision": "62eb35b2960595e5a318b3e9053bb96c",
-    "url": "/static/js/2.c5f1a6af.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.44b5fe21.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d06bea7e3c6d9c5d1530",
-    "url": "/static/js/main.d7b19e53.chunk.js"
+    "revision": "e36446869740fcb55346",
+    "url": "/static/js/main.fa4f85dc.chunk.js"
   },
   {
     "revision": "e16251361c5f31c799c5",
     "url": "/static/js/runtime-main.3ffa03c4.js"
-  },
-  {
-    "revision": "8a1e2f3f5cda75033e9bf8d1aedadd2d",
-    "url": "/static/media/Rachael Tay Resume.8a1e2f3f.pdf"
   },
   {
     "revision": "f25dc81dd45203848bf5bade69c3e00c",
