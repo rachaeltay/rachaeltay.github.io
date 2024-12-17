@@ -16,9 +16,10 @@ import {
     BiLogoTypescript,
 } from 'react-icons/bi';
 import { TbBrandNextjs, TbBrandFigma } from 'react-icons/tb';
-import simpleswap from './assets/images/simpleswap-dark-mode.png';
+import simpleSwap from './assets/images/simpleswap-dark-mode.png';
 import chatBot from './assets/images/chatbot.png';
 import orderbook from './assets/images/orderbook.png';
+import diametricLabs from './assets/images/diametriclabs.png';
 
 export const links = [
     { id: nanoid(), href: '#home', text: 'home' },
@@ -113,16 +114,25 @@ export const skills = [
 export const projects = [
     {
         id: nanoid(),
+        img: diametricLabs,
+        url: 'https://diametriclabs.com',
+        github: 'https://github.com/kahhongt/diametriclabs',
+        title: 'Diametric Labs',
+        tech: 'Using Next.js 14 and TailwindCSS',
+        text: 'A website for Diametric Labs',
+    },
+    {
+        id: nanoid(),
         img: chatBot,
         url: 'https://rach-next-chatbot.vercel.app',
         github: 'https://github.com/rachaeltay/next-chatbot',
         title: 'Llama 3.3 Chatbot',
         tech: 'Using Next.js 14, Supabase, Llama 3.3, and Vercel',
-        text: 'A chat application where users register, sign in and can have multiple conversations with a Llama 3.3 model',
+        text: 'A chat application where users can register, sign in and have multiple conversations with a Llama 3.3 model',
     },
     {
         id: nanoid(),
-        img: simpleswap,
+        img: simpleSwap,
         url: 'https://rach-simpleswap.netlify.app/',
         github: 'https://github.com/rachaeltay/simpleswap',
         title: 'Simple swap',
@@ -135,7 +145,7 @@ export const projects = [
         url: '',
         github: 'https://github.com/rachaeltay/Angular-Orderbook',
         title: 'Coinbase Live Orderbook',
-        tech: 'Using Angular and Coinbase API',
-        text: 'An orderbook for crypto coins',
+        tech: 'Using Angular 13.1.3 and Coinbase API',
+        text: 'A live orderbook for crypto coins on Coinbase',
     },
 ];
