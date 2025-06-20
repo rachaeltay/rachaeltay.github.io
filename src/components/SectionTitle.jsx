@@ -1,10 +1,10 @@
 const SectionTitle = ({ text }) => {
-  return (
-    <div className='border-b border-gray-200 pb-5'>
-      <h2 className='text-3xl font-medium tracking-wider capitalize text-white'>
-        {text}
-      </h2>
-    </div>
-  );
+    return (
+        <div className='border-b border-border-light pb-5'>
+            <h2 className='text-3xl font-medium tracking-wider capitalize text-text-primary'>
+                {text}
+            </h2>
+        </div>
+    );
 };
 export default SectionTitle;

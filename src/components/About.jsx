@@ -11,7 +11,7 @@ const About = () => {
                 <img className='rounded-full py-16 px-16' src={profilePic} />
                 <article>
                     <SectionTitle text='code and me' />
-                    <p className='text-slate-800 mt-8 leading-loose'>
+                    <p className='text-text-dark mt-8 leading-loose'>
                         Hello, I'm Rachael Tay, a dedicated software engineer
                         focused on creating seamless user experiences and
                         leveraging cutting-edge technologies. I'm driven by a

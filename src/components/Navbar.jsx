@@ -1,26 +1,111 @@
+import { useState } from 'react';
 import { links } from '../data';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
-  return (
-    <nav className='bg-slate-700'>
-      <div className='align-element py-4 flex flex-col sm:flex-row sm:gap-x-16 sm:items-center sm:py-8'>
-        <h2 className='text-3xl font-bold text-white'>{' <Rachael />'}</h2>
-        <div className='flex gap-x-3'>
-          {links.map((link) => {
-            const { id, href, text } = link;
-            return (
-              <a
-                key={id}
-                href={href}
-                className='capitalize text-lg tracking-wide text-white hover:text-blue-500 duration-300'
-              >
-                {text}
-              </a>
-            );
-          })}
-        </div>
-      </div>
-    </nav>
-  );
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+    };
+
+    return (
+        <>
+            <nav className='bg-primary'>
+                <div className='align-element py-4 flex flex-col sm:flex-row sm:gap-x-16 sm:items-center sm:py-8 sm:justify-between'>
+                    <div className='flex justify-between items-center'>
+                        <h2 className='text-2xl text-accent'>
+                            {' <Rachael />'}
+                        </h2>
+                        <button
+                            onClick={toggleMenu}
+                            className='sm:hidden text-text-primary hover:text-accent transition-colors duration-300'
+                        >
+                            {isMenuOpen ? (
+                                <FaTimes className='h-6 w-6' />
+                            ) : (
+                                <FaBars className='h-6 w-6' />
+                            )}
+                        </button>
+                    </div>
+
+                    {/* Desktop Navigation */}
+                    <div className='hidden sm:flex gap-x-6'>
+                        {links.map((link, index) => {
+                            const { id, href, text } = link;
+                            return (
+                                <a
+                                    key={id}
+                                    href={href}
+                                    className='capitalize text-lg tracking-wide text-text-primary hover:text-accent duration-300'
+                                >
+                                    <span className='text-accent'>
+                                        0{index + 1}.
+                                    </span>{' '}
+                                    <span className='text-text-primary'>
+                                        {text}
+                                    </span>
+                                </a>
+                            );
+                        })}
+                    </div>
+                </div>
+            </nav>
+
+            {/* Mobile Sidebar Overlay */}
+            {isMenuOpen && (
+                <div
+                    className='fixed inset-0 bg-black/50 z-40 sm:hidden'
+                    onClick={closeMenu}
+                ></div>
+            )}
+
+            {/* Mobile Sidebar */}
+            <div
+                className={`fixed top-0 right-0 h-full w-64 bg-primary shadow-lg transform transition-transform duration-300 ease-in-out z-50 sm:hidden ${
+                    isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+                }`}
+            >
+                <div className='p-6'>
+                    <div className='flex justify-between items-center mb-8'>
+                        <h2 className='text-2xl text-accent'>
+                            {' <Rachael />'}
+                        </h2>
+                        <button
+                            onClick={closeMenu}
+                            className='text-text-primary hover:text-accent transition-colors duration-300'
+                        >
+                            <FaTimes className='h-5 w-5' />
+                        </button>
+                    </div>
+
+                    <div className='flex flex-col gap-y-6'>
+                        {links.map((link, index) => {
+                            const { id, href, text } = link;
+                            return (
+                                <a
+                                    key={id}
+                                    href={href}
+                                    onClick={closeMenu}
+                                    className='capitalize text-lg tracking-wide text-text-primary hover:text-accent duration-300 flex items-center'
+                                >
+                                    <span className='text-accent mr-2'>
+                                        0{index + 1}.
+                                    </span>
+                                    <span className='text-text-primary'>
+                                        {text}
+                                    </span>
+                                </a>
+                            );
+                        })}
+                    </div>
+                </div>
+            </div>
+        </>
+    );
 };
 export default Navbar;

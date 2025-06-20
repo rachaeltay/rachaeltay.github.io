@@ -3,7 +3,7 @@ import animationData from '../assets/lottie/popupcat.json';
 
 const Footer = () => {
     return (
-        <footer className='bg-slate-100 pt-20 text-center'>
+        <footer className='bg-bg-muted pt-20 text-center'>
             <div
                 className='-mb-64 px-10'
                 style={{ zIndex: 2, position: 'relative' }}
@@ -16,7 +16,7 @@ const Footer = () => {
                     position available or simply want to connect, feel free to
                     reach out to me{' '}
                     <a
-                        className='text-sky-600 cursor-pointer'
+                        className='text-accent-dark cursor-pointer hover:text-accent transition-colors duration-300'
                         href='mailto:rachael.tay22@gmail.com'
                         aria-label='Email'
                     >
