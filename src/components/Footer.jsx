@@ -3,7 +3,7 @@ import animationData from '../assets/lottie/popupcat.json';
 
 const Footer = () => {
     return (
-        <footer className='bg-bg-muted pt-20 text-center'>
+        <footer className='bg-slate-300 pt-20 text-center'>
             <div
                 className='-mb-64 px-10'
                 style={{ zIndex: 2, position: 'relative' }}
@@ -15,15 +15,24 @@ const Footer = () => {
                     I'm open to full-time opportunities! Whether you have a
                     position available or simply want to connect, feel free to
                     reach out to me{' '}
-                    <a
-                        className='text-accent-dark cursor-pointer hover:text-accent transition-colors duration-300'
-                        href='mailto:rachael.tay22@gmail.com'
-                        aria-label='Email'
-                    >
-                        here
-                    </a>
-                    .
                 </span>
+                <br />
+                <a
+                    className='inline-block mt-5 bg-muted-dark text-text-primary px-4 py-2 rounded-lg hover:bg-accent/80 transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg'
+                    href='mailto:rachael.tay22@gmail.com'
+                    aria-label='Email'
+                >
+                    Say Hello
+                </a>
+                <p className='text-text-muted py-5 italic'>
+                    Designed and built by{' '}
+                    <a
+                        className='cursor-pointer hover:text-primary transition-colors duration-300'
+                        href='https://github.com/rachael-tay'
+                    >
+                        Rachael Tay
+                    </a>
+                </p>
             </div>
             <Lottie
                 animationData={animationData}
