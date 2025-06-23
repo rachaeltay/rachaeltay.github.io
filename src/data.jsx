@@ -114,22 +114,6 @@ export const skills = [
 export const projects = [
     {
         id: nanoid(),
-        img: diametricLabs,
-        url: 'https://diametriclabs.com',
-        github: 'https://github.com/kahhongt/diametriclabs',
-        title: 'Diametric Labs',
-        techlist: [
-            'Next.js 14',
-            'TailwindCSS',
-            'Shadcn UI',
-            'Figma',
-            'NPM',
-            'Git',
-        ],
-        text: 'A modern website for Diametric Labs with a clean and responsive design, built with Next.js 14 and TailwindCSS',
-    },
-    {
-        id: nanoid(),
         img: chatBot,
         url: 'https://rach-next-chatbot.vercel.app',
         github: 'https://github.com/rachaeltay/next-chatbot',
@@ -167,5 +151,21 @@ export const projects = [
             'Typescript',
         ],
         text: 'A live orderbook for crypto coins on Coinbase, built with Angular 13.1.3 and Coinbase API',
+    },
+    {
+        id: nanoid(),
+        img: diametricLabs,
+        url: 'https://diametriclabs.com',
+        github: 'https://github.com/kahhongt/diametriclabs',
+        title: 'Diametric Labs',
+        techlist: [
+            'Next.js 14',
+            'TailwindCSS',
+            'Shadcn UI',
+            'Figma',
+            'NPM',
+            'Git',
+        ],
+        text: 'A modern website for Diametric Labs with a clean and responsive design, built with Next.js 14 and TailwindCSS',
     },
 ];
