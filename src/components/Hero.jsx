@@ -6,7 +6,10 @@ import gitcat from '../assets/lottie/gitcat.json';
 
 const Hero = () => {
     return (
-        <div className='bg-gradient-to-b from-primary to-slate-600 py-24'>
+        <div
+            id='intro'
+            className='bg-gradient-to-b from-primary to-slate-600 py-24'
+        >
             <div className='align-element grid md:grid-cols-2 items-center gap-8'>
                 <article>
                     <h1 className='text-text-primary text-6xl font-bold tracking-wider'>
@@ -30,7 +33,7 @@ const Hero = () => {
                     </p>
                     <p className='mt-4 text-text-secondary tracking-wide'>
                         I'm a frontend engineer with a passion for intuitive,
-                        responsive design. Lately, I’ve been taking on freelance
+                        responsive design. Lately, I've been taking on freelance
                         projects for SMEs to stay sharp and explore new
                         challenges.
                     </p>
@@ -52,7 +55,7 @@ const Hero = () => {
                         </a>
                     </div>
                 </article>
-                <article className='hidden md:block'>
+                <article className='md:block'>
                     <LottieView
                         animationData={animationData}
                         loop={true}

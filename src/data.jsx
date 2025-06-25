@@ -22,7 +22,7 @@ import orderbook from './assets/images/orderbook.png';
 import diametricLabs from './assets/images/diametriclabs.png';
 
 export const links = [
-    { id: nanoid(), href: '#home', text: 'home' },
+    { id: nanoid(), href: '#intro', text: 'intro' },
     { id: nanoid(), href: '#skills', text: 'skills' },
     { id: nanoid(), href: '#about', text: 'about' },
     { id: nanoid(), href: '#projects', text: 'projects' },
