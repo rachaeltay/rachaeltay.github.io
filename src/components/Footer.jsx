@@ -2,6 +2,8 @@ import Lottie from 'lottie-react';
 import animationData from '../assets/lottie/popupcat.json';
 
 const Footer = () => {
+    const currentYear = new Date().getFullYear();
+
     return (
         <footer className='bg-slate-300 pt-20 text-center'>
             <div
@@ -40,6 +42,15 @@ const Footer = () => {
                 autoplay={true}
                 style={{ height: 400, zIndex: 1, position: 'relative' }}
             />
+
+            {/* Copyright Section */}
+            <div className='relative z-10 bg-slate-400 py-4'>
+                <div className='align-element'>
+                    <p className='text-text-dark text-sm'>
+                        © {currentYear} Rachael Tay. All rights reserved.
+                    </p>
+                </div>
+            </div>
         </footer>
     );
 };

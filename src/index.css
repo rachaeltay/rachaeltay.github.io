@@ -3,13 +3,29 @@
 @tailwind utilities;
 
 @layer components {
-  .align-element {
-    @apply mx-auto max-w-7xl px-8;
-  }
+    .align-element {
+        @apply mx-auto max-w-7xl px-8;
+    }
+}
+
+@layer utilities {
+    .animate-wiggle {
+        animation: wiggle 1s ease-in-out infinite;
+    }
+}
+
+@keyframes wiggle {
+    0%,
+    100% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
 }
 
 @media (max-width: 767px) {
-  .profile-pic {
-    display: none;
-  }
+    .profile-pic {
+        display: none;
+    }
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { links } from '../data';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import logo from '../assets/rcon.png';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,9 +19,13 @@ const Navbar = () => {
             <nav className='bg-primary'>
                 <div className='align-element py-4 flex flex-col sm:flex-row sm:gap-x-16 sm:items-center sm:py-8 sm:justify-between'>
                     <div className='flex justify-between items-center'>
-                        <h2 className='text-2xl text-accent'>
-                            {' <Rachael />'}
-                        </h2>
+                        <div className='flex items-center gap-3'>
+                            <img
+                                src={logo}
+                                alt='logo'
+                                className='w-10 h-10 transition-all duration-500 ease-out hover:drop-shadow-lg hover:drop-shadow-accent/50 cursor-pointer hover:animate-wiggle'
+                            />
+                        </div>
                         <button
                             onClick={toggleMenu}
                             className='sm:hidden text-text-primary hover:text-accent transition-colors duration-300'
@@ -72,9 +77,11 @@ const Navbar = () => {
             >
                 <div className='p-6'>
                     <div className='flex justify-between items-center mb-8'>
-                        <h2 className='text-2xl text-accent'>
-                            {' <Rachael />'}
-                        </h2>
+                        <img
+                            src={logo}
+                            alt='logo'
+                            className='w-8 h-8 transition-all duration-500 ease-out hover:drop-shadow-lg hover:drop-shadow-accent/50 cursor-pointer hover:animate-wiggle'
+                        />
                         <button
                             onClick={closeMenu}
                             className='text-text-primary hover:text-accent transition-colors duration-300'
