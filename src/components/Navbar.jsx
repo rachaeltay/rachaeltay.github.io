@@ -38,7 +38,6 @@ const Navbar = () => {
                         </button>
                     </div>
 
-                    {/* Desktop Navigation */}
                     <div className='hidden sm:flex gap-x-6'>
                         {links.map((link, index) => {
                             const { id, href, text } = link;
@@ -61,7 +60,6 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            {/* Mobile Sidebar Overlay */}
             {isMenuOpen && (
                 <div
                     className='fixed inset-0 bg-black/50 z-40 sm:hidden'
@@ -69,7 +67,6 @@ const Navbar = () => {
                 ></div>
             )}
 
-            {/* Mobile Sidebar */}
             <div
                 className={`fixed top-0 right-0 h-full w-64 bg-primary shadow-lg transform transition-transform duration-300 ease-in-out z-50 sm:hidden ${
                     isMenuOpen ? 'translate-x-0' : 'translate-x-full'
