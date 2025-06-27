@@ -20,6 +20,8 @@ import simpleSwap from './assets/images/simpleswap-dark-mode.png';
 import chatBot from './assets/images/chatbot.png';
 import orderbook from './assets/images/orderbook.png';
 import diametricStudios from './assets/images/diametric-studios.png';
+import chatMobile from './assets/images/chat/chat-mobile.png';
+import studioMobile from './assets/images/studio/studio-mobile.png';
 
 export const links = [
     { id: nanoid(), href: '#intro', text: 'intro' },
@@ -115,6 +117,7 @@ export const projects = [
     {
         id: nanoid(),
         img: chatBot,
+        mobileImg: chatMobile,
         url: 'https://rach-next-chatbot.vercel.app',
         github: 'https://github.com/rachaeltay/next-chatbot',
         title: 'Llama 3.3 Chat',
@@ -132,6 +135,7 @@ export const projects = [
     {
         id: nanoid(),
         img: diametricStudios,
+        mobileImg: studioMobile,
         url: 'https://diametricstudios.com',
         github: 'https://github.com/rachaeltay/diametricstudio',
         title: 'Diametric Studios',

@@ -1,115 +1,169 @@
-import { useState } from 'react';
-import { links } from '../data';
+import { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/rcon.png';
 
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const navLinks = [
+        { href: '#intro', text: 'home' },
+        { href: '#about', text: 'about' },
+        { href: '#skills', text: 'skills' },
+        { href: '#projects', text: 'projects' },
+    ];
 
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+        setIsOpen(!isOpen);
     };
 
     const closeMenu = () => {
-        setIsMenuOpen(false);
+        setIsOpen(false);
     };
 
     return (
-        <>
-            <nav className='bg-primary'>
-                <div className='align-element py-4 flex flex-col sm:flex-row sm:gap-x-16 sm:items-center sm:py-8 sm:justify-between'>
-                    <div className='flex justify-between items-center'>
-                        <div className='flex items-center gap-3'>
+        <motion.nav
+            className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+                isScrolled
+                    ? 'bg-slate-800/95 backdrop-blur-sm shadow-lg'
+                    : 'bg-transparent'
+            }`}
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.5 }}
+        >
+            <div className='align-element py-4'>
+                <div className='flex justify-between items-center'>
+                    <motion.div
+                        className='text-2xl font-bold text-text-primary'
+                        whileHover={{
+                            scale: 1.1,
+                            rotate: [0, -10, 10, 0],
+                        }}
+                        transition={{
+                            type: 'spring',
+                            stiffness: 300,
+                            rotate: { duration: 0.5 },
+                        }}
+                    >
+                        <a
+                            href='#intro'
+                            className='hover:text-accent transition-colors duration-300'
+                        >
                             <img
                                 src={logo}
                                 alt='logo'
-                                className='w-10 h-10 transition-all duration-500 ease-out hover:drop-shadow-lg hover:drop-shadow-accent/50 cursor-pointer hover:animate-wiggle'
+                                className='w-10 h-10 transition-all duration-500 ease-out hover:drop-shadow-lg hover:drop-shadow-accent/50 cursor-pointer'
                             />
-                        </div>
-                        <button
-                            onClick={toggleMenu}
-                            className='sm:hidden text-text-primary hover:text-accent transition-colors duration-300'
-                        >
-                            {isMenuOpen ? (
-                                <FaTimes className='h-6 w-6' />
+                        </a>
+                    </motion.div>
+
+                    <div className='hidden md:flex space-x-8'>
+                        {navLinks.map((link, index) => (
+                            <motion.a
+                                key={link.href}
+                                href={link.href}
+                                className='text-text-primary hover:text-accent transition-colors duration-300 relative group'
+                                whileHover={{ y: -2 }}
+                                whileTap={{ scale: 0.95 }}
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{
+                                    duration: 0.5,
+                                    delay: index * 0.1,
+                                }}
+                            >
+                                {link.text}
+                                <motion.span
+                                    className='absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full'
+                                    whileHover={{ width: '100%' }}
+                                />
+                            </motion.a>
+                        ))}
+                    </div>
+
+                    <motion.button
+                        className='md:hidden text-text-primary hover:text-accent transition-colors duration-300'
+                        onClick={toggleMenu}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                    >
+                        <AnimatePresence mode='wait'>
+                            {isOpen ? (
+                                <motion.div
+                                    key='close'
+                                    initial={{ rotate: -90, opacity: 0 }}
+                                    animate={{ rotate: 0, opacity: 1 }}
+                                    exit={{ rotate: 90, opacity: 0 }}
+                                    transition={{ duration: 0.2 }}
+                                >
+                                    <FaTimes size={24} />
+                                </motion.div>
                             ) : (
-                                <FaBars className='h-6 w-6' />
+                                <motion.div
+                                    key='menu'
+                                    initial={{ rotate: 90, opacity: 0 }}
+                                    animate={{ rotate: 0, opacity: 1 }}
+                                    exit={{ rotate: -90, opacity: 0 }}
+                                    transition={{ duration: 0.2 }}
+                                >
+                                    <FaBars size={24} />
+                                </motion.div>
                             )}
-                        </button>
-                    </div>
-
-                    <div className='hidden sm:flex gap-x-6'>
-                        {links.map((link, index) => {
-                            const { id, href, text } = link;
-                            return (
-                                <a
-                                    key={id}
-                                    href={href}
-                                    className='group capitalize text-lg tracking-wide text-text-primary hover:text-accent duration-300'
-                                >
-                                    <span className='text-accent group-hover:text-accent'>
-                                        0{index + 1}.
-                                    </span>{' '}
-                                    <span className='text-text-primary group-hover:text-accent'>
-                                        {text}
-                                    </span>
-                                </a>
-                            );
-                        })}
-                    </div>
+                        </AnimatePresence>
+                    </motion.button>
                 </div>
-            </nav>
 
-            {isMenuOpen && (
-                <div
-                    className='fixed inset-0 bg-black/50 z-40 sm:hidden'
-                    onClick={closeMenu}
-                ></div>
-            )}
-
-            <div
-                className={`fixed top-0 right-0 h-full w-64 bg-primary shadow-lg transform transition-transform duration-300 ease-in-out z-50 sm:hidden ${
-                    isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-                }`}
-            >
-                <div className='p-6'>
-                    <div className='flex justify-between items-center mb-8'>
-                        <img
-                            src={logo}
-                            alt='logo'
-                            className='w-8 h-8 transition-all duration-500 ease-out hover:drop-shadow-lg hover:drop-shadow-accent/50 cursor-pointer hover:animate-wiggle'
-                        />
-                        <button
-                            onClick={closeMenu}
-                            className='text-text-primary hover:text-accent transition-colors duration-300'
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.div
+                            className='md:hidden'
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.3 }}
                         >
-                            <FaTimes className='h-5 w-5' />
-                        </button>
-                    </div>
-
-                    <div className='flex flex-col gap-y-6'>
-                        {links.map((link, index) => {
-                            const { id, href, text } = link;
-                            return (
-                                <a
-                                    key={id}
-                                    href={href}
-                                    onClick={closeMenu}
-                                    className='capitalize text-lg tracking-wide text-text-primary duration-300 flex items-center'
-                                >
-                                    <span className='text-accent mr-2'>
-                                        0{index + 1}.
-                                    </span>
-                                    <span className='text-text-primary'>
-                                        {text}
-                                    </span>
-                                </a>
-                            );
-                        })}
-                    </div>
-                </div>
+                            <motion.div
+                                className='py-4 space-y-4'
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.1 }}
+                            >
+                                {navLinks.map((link, index) => (
+                                    <motion.a
+                                        key={link.href}
+                                        href={link.href}
+                                        onClick={closeMenu}
+                                        className='block text-text-primary hover:text-accent transition-colors duration-300 text-lg font-medium'
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{
+                                            duration: 0.3,
+                                            delay: index * 0.1,
+                                        }}
+                                        whileHover={{ x: 10 }}
+                                        whileTap={{ scale: 0.95 }}
+                                    >
+                                        {link.text}
+                                    </motion.a>
+                                ))}
+                            </motion.div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
-        </>
+        </motion.nav>
     );
 };
+
 export default Navbar;

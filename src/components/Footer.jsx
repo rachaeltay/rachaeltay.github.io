@@ -1,55 +1,65 @@
+import { motion } from 'framer-motion';
+import { useScrollAnimation, hoverScale } from '../hooks/useScrollAnimation';
+import AnimatedElement from './AnimatedElement';
 import Lottie from 'lottie-react';
 import animationData from '../assets/lottie/popupcat.json';
 
 const Footer = () => {
-    const currentYear = new Date().getFullYear();
+    const { ref, inView } = useScrollAnimation();
 
     return (
-        <footer className='bg-slate-300 pt-20 text-center'>
-            <div
-                className='-mb-64 px-10'
-                style={{ zIndex: 2, position: 'relative' }}
-            >
-                <h1 className='text-3xl font-medium tracking-wider capitalize p-5'>
-                    Get in touch
-                </h1>
-                <span className='w-5/6'>
-                    I'm open to full-time opportunities! Whether you have a
-                    position available or simply want to connect, feel free to
-                    reach out to me{' '}
-                </span>
-                <br />
-                <a
-                    className='inline-block mt-5 bg-muted-dark text-text-primary px-4 py-2 rounded-lg hover:bg-accent/80 transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg'
-                    href='mailto:rachael.tay22@gmail.com'
-                    aria-label='Email'
+        <footer className='bg-gradient-to-b from-slate-600 to-slate-700 py-16 relative overflow-hidden'>
+            <div className='align-element relative z-10'>
+                <motion.div
+                    ref={ref}
+                    className='flex flex-col md:flex-row justify-between items-center gap-4'
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={
+                        inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+                    }
+                    transition={{ duration: 0.8 }}
                 >
-                    Say Hello
-                </a>
-                <p className='text-text-muted py-5 italic'>
-                    Designed and built by{' '}
-                    <a
-                        className='cursor-pointer hover:text-primary transition-colors duration-300'
-                        href='https://github.com/rachael-tay'
-                    >
-                        Rachael Tay
-                    </a>
-                </p>
-            </div>
-            <Lottie
-                animationData={animationData}
-                loop={true}
-                autoplay={true}
-                style={{ height: 400, zIndex: 1, position: 'relative' }}
-            />
+                    <AnimatedElement animation='fadeInLeft' delay={0.2}>
+                        <h4 className='text-text-primary text-xl font-semibold'>
+                            Let's connect
+                        </h4>
+                        <p className='text-text-secondary mt-2'>
+                            Always up for a chat about tech, cats, or anything
+                            interesting!
+                        </p>
+                    </AnimatedElement>
 
-            {/* Copyright Section */}
-            <div className='relative z-10 py-4'>
-                <div className='align-element'>
-                    <p className='text-text-dark text-sm'>
-                        © {currentYear} Rachael Tay. All rights reserved.
+                    <AnimatedElement animation='fadeInRight' delay={0.4}>
+                        <motion.a
+                            href='mailto:rachael.tay@example.com'
+                            className='inline-block bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent-light transition-colors duration-300 shadow-lg hover:shadow-xl'
+                            {...hoverScale}
+                        >
+                            Get In Touch
+                        </motion.a>
+                    </AnimatedElement>
+                </motion.div>
+
+                <AnimatedElement
+                    animation='fadeInUp'
+                    delay={0.6}
+                    className='border-t border-slate-500 mt-8 pt-8 text-center'
+                >
+                    <p className='text-text-secondary'>
+                        © {new Date().getFullYear()} Rachael Tay. All rights
+                        reserved.
                     </p>
-                </div>
+                </AnimatedElement>
+            </div>
+
+            {/* Lottie positioned behind the content */}
+            <div className='absolute inset-0 flex justify-center items-center pointer-events-none z-0'>
+                <Lottie
+                    animationData={animationData}
+                    loop={true}
+                    autoplay={true}
+                    style={{ height: '100%', width: 'auto', maxWidth: '50%' }}
+                />
             </div>
         </footer>
     );
