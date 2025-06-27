@@ -147,7 +147,7 @@ export const projects = [
         img: simpleSwap,
         url: 'https://rach-simpleswap.netlify.app/',
         github: 'https://github.com/rachaeltay/simpleswap',
-        title: 'Simple swap',
+        title: 'Simple Swap',
         techlist: ['React 17', 'CoinGecko API', 'Material UI'],
         text: 'A crypto coin exchange that uses CoinGecko API to retrieve the listing and their prices, built with React 17 with eslint and CoinGecko API',
     },

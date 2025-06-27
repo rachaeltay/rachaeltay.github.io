@@ -22,13 +22,13 @@ const ProjectMockup = ({ image, mobileImg, title, isEven }) => {
                         {/* Screen */}
                         <div className='bg-white rounded-b-lg overflow-hidden shadow-inner'>
                             {/* Browser Bar */}
-                            <div className='bg-gray-700 px-3 py-2 flex items-center space-x-2'>
+                            <div className='bg-gray-700 px-3 py-1.5 flex items-center space-x-2'>
                                 <div className='flex space-x-1'>
-                                    <div className='w-3 h-3 bg-red-400 rounded-full'></div>
-                                    <div className='w-3 h-3 bg-yellow-400 rounded-full'></div>
-                                    <div className='w-3 h-3 bg-green-400 rounded-full'></div>
+                                    <div className='w-2 h-2 bg-red-400 rounded-full'></div>
+                                    <div className='w-2 h-2 bg-yellow-400 rounded-full'></div>
+                                    <div className='w-2 h-2 bg-green-400 rounded-full'></div>
                                 </div>
-                                <div className='flex-1 bg-gray-600 rounded px-2 py-1 text-xs text-white truncate'>
+                                <div className='flex-1 bg-gray-600 rounded px-2 py-0.5 text-xs text-white truncate'>
                                     {title}
                                 </div>
                             </div>
