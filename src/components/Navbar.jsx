@@ -98,12 +98,12 @@ const Navbar = () => {
                                     key={id}
                                     href={href}
                                     onClick={closeMenu}
-                                    className='capitalize text-lg tracking-wide text-text-primary hover:text-accent duration-300 flex items-center'
+                                    className='group capitalize text-lg tracking-wide text-text-primary hover:text-accent duration-300 flex items-center'
                                 >
-                                    <span className='text-accent mr-2'>
+                                    <span className='text-accent group-hover:text-accent mr-2'>
                                         0{index + 1}.
                                     </span>
-                                    <span className='text-text-primary'>
+                                    <span className='text-text-primary group-hover:text-accent'>
                                         {text}
                                     </span>
                                 </a>

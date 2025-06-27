@@ -19,7 +19,7 @@ import { TbBrandNextjs, TbBrandFigma } from 'react-icons/tb';
 import simpleSwap from './assets/images/simpleswap-dark-mode.png';
 import chatBot from './assets/images/chatbot.png';
 import orderbook from './assets/images/orderbook.png';
-import diametricLabs from './assets/images/diametriclabs.png';
+import diametricStudios from './assets/images/diametric-studios.png';
 
 export const links = [
     { id: nanoid(), href: '#intro', text: 'intro' },
@@ -131,6 +131,15 @@ export const projects = [
     },
     {
         id: nanoid(),
+        img: diametricStudios,
+        url: 'https://diametricsstudios.com',
+        github: 'https://github.com/rachaeltay/diametricstudio',
+        title: 'Diametric Studios',
+        techlist: ['React 18', 'TailwindCSS', 'Shadcn UI', 'Cloudflare', 'Git'],
+        text: 'A modern website for Diametric Studios with a clean and responsive design, built with React 18, TailwindCSS, Shadcn UI, Cloudflare, and Git',
+    },
+    {
+        id: nanoid(),
         img: simpleSwap,
         url: 'https://rach-simpleswap.netlify.app/',
         github: 'https://github.com/rachaeltay/simpleswap',
@@ -151,21 +160,5 @@ export const projects = [
             'Typescript',
         ],
         text: 'A live orderbook for crypto coins on Coinbase, built with Angular 13.1.3 and Coinbase API',
-    },
-    {
-        id: nanoid(),
-        img: diametricLabs,
-        url: 'https://diametriclabs.com',
-        github: 'https://github.com/kahhongt/diametriclabs',
-        title: 'Diametric Labs',
-        techlist: [
-            'Next.js 14',
-            'TailwindCSS',
-            'Shadcn UI',
-            'Figma',
-            'NPM',
-            'Git',
-        ],
-        text: 'A modern website for Diametric Labs with a clean and responsive design, built with Next.js 14 and TailwindCSS',
     },
 ];
