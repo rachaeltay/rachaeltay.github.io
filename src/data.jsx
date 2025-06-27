@@ -132,7 +132,7 @@ export const projects = [
     {
         id: nanoid(),
         img: diametricStudios,
-        url: 'https://diametricsstudios.com',
+        url: 'https://diametricstudios.com',
         github: 'https://github.com/rachaeltay/diametricstudio',
         title: 'Diametric Studios',
         techlist: ['React 18', 'TailwindCSS', 'Shadcn UI', 'Cloudflare', 'Git'],
