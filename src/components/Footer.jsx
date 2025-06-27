@@ -44,7 +44,7 @@ const Footer = () => {
             />
 
             {/* Copyright Section */}
-            <div className='relative z-10 bg-slate-400 py-4'>
+            <div className='relative z-10 py-4'>
                 <div className='align-element'>
                     <p className='text-text-dark text-sm'>
                         © {currentYear} Rachael Tay. All rights reserved.
