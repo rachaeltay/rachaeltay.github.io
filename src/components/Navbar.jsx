@@ -46,12 +46,12 @@ const Navbar = () => {
                                 <a
                                     key={id}
                                     href={href}
-                                    className='capitalize text-lg tracking-wide text-text-primary hover:text-accent duration-300'
+                                    className='group capitalize text-lg tracking-wide text-text-primary hover:text-accent duration-300'
                                 >
-                                    <span className='text-accent'>
+                                    <span className='text-accent group-hover:text-accent'>
                                         0{index + 1}.
                                     </span>{' '}
-                                    <span className='text-text-primary'>
+                                    <span className='text-text-primary group-hover:text-accent'>
                                         {text}
                                     </span>
                                 </a>
@@ -98,10 +98,14 @@ const Navbar = () => {
                                     key={id}
                                     href={href}
                                     onClick={closeMenu}
-                                    className='capitalize text-lg tracking-wide text-text-primary hover:text-accent duration-300 flex items-center'
+                                    className='capitalize text-lg tracking-wide text-text-primary duration-300 flex items-center'
                                 >
-                                    <span className='mr-2'>0{index + 1}.</span>
-                                    <span>{text}</span>
+                                    <span className='text-accent mr-2'>
+                                        0{index + 1}.
+                                    </span>
+                                    <span className='text-text-primary'>
+                                        {text}
+                                    </span>
                                 </a>
                             );
                         })}

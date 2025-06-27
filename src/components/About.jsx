@@ -8,7 +8,10 @@ const About = () => {
             id='about'
         >
             <div className='align-element grid md:grid-cols-2 items-center gap-6 px-10'>
-                <img className='rounded-full py-16 px-16' src={profilePic} />
+                <img
+                    className='rounded-full py-6 px-6 md:py-16 md:px-16 w-full h-full object-cover'
+                    src={profilePic}
+                />
                 <article>
                     <SectionTitle text='code and me' />
                     <p className='text-text-dark mt-8 leading-loose'>
