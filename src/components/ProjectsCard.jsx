@@ -25,13 +25,13 @@ const ProjectsCard = ({ project, isEven, inView, contentStaggerVariants }) => {
                         {project.title}
                     </motion.h2>
                     <motion.div
-                        className='text-text-secondary leading-relaxed mb-8 text-lg bg-bg-muted-dark p-6 rounded-lg shadow-lg'
+                        className='text-text-primary leading-relaxed mb-8 text-lg bg-bg-muted-dark p-6 rounded-lg shadow-lg'
                         variants={itemVariants}
                     >
                         {project.text}
                     </motion.div>
                     <motion.p
-                        className={`text-text-muted mb-6 text-lg font-medium flex flex-wrap gap-4 ${
+                        className={`text-text-muted-light mb-6 text-lg font-medium flex flex-wrap gap-4 ${
                             isEven ? 'justify-end' : 'justify-start'
                         }`}
                         variants={itemVariants}
@@ -39,7 +39,7 @@ const ProjectsCard = ({ project, isEven, inView, contentStaggerVariants }) => {
                         {project.techlist?.map((tech, techIndex) => (
                             <motion.span
                                 key={techIndex}
-                                className='text-text-muted hover:text-text-secondary transition-colors duration-300'
+                                className='text-text-muted-light hover:text-accent transition-colors duration-300'
                                 variants={itemVariants}
                             >
                                 {tech}
@@ -57,7 +57,7 @@ const ProjectsCard = ({ project, isEven, inView, contentStaggerVariants }) => {
                             <a
                                 href={project.url}
                                 target='_blank'
-                                className='text-text-muted hover:text-accent transition-colors duration-300'
+                                className='text-text-muted-light hover:text-accent transition-colors duration-300'
                             >
                                 <svg
                                     className='h-6 w-6'
@@ -75,7 +75,7 @@ const ProjectsCard = ({ project, isEven, inView, contentStaggerVariants }) => {
                         <a
                             href={project.github}
                             target='_blank'
-                            className='text-text-muted hover:text-accent transition-colors duration-300'
+                            className='text-text-muted-light hover:text-accent transition-colors duration-300'
                         >
                             <svg
                                 className='h-6 w-6'
@@ -108,7 +108,7 @@ const ProjectsCard = ({ project, isEven, inView, contentStaggerVariants }) => {
                         {project.title}
                     </motion.h2>
                     <motion.div
-                        className='text-text-muted-light mb-4 text-sm leading-relaxed'
+                        className='text-text-primary mb-4 text-sm leading-relaxed'
                         variants={itemVariants}
                     >
                         {project.text}
@@ -120,7 +120,7 @@ const ProjectsCard = ({ project, isEven, inView, contentStaggerVariants }) => {
                         {project.techlist?.map((tech, techIndex) => (
                             <motion.span
                                 key={techIndex}
-                                className='text-text-muted-light text-sm'
+                                className='text-text-secondary text-sm'
                                 variants={itemVariants}
                             >
                                 {tech}
@@ -135,7 +135,7 @@ const ProjectsCard = ({ project, isEven, inView, contentStaggerVariants }) => {
                             <a
                                 href={project.url}
                                 target='_blank'
-                                className='text-text-muted hover:text-accent transition-colors duration-300'
+                                className='text-text-muted-light hover:text-accent transition-colors duration-300'
                             >
                                 <svg
                                     className='h-6 w-6'

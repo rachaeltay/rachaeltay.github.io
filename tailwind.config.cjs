@@ -9,7 +9,7 @@ export default {
             colors: {
                 // Primary brand colors
                 primary: '#334155', // slate-700
-                accent: '#04d9ff', // blue-500
+                accent: '#04d9ff',
                 'accent-dark': '#02bdde',
 
                 // Text colors
