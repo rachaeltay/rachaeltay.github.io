@@ -15,6 +15,7 @@ export default {
                 // Text colors
                 'text-primary': '#ffffff', // white
                 'text-secondary': '#e2e8f0', // slate-200
+                'text-secondary-dark': '#cdd4dd',
                 'text-muted': '#64748b', // slate-500
                 'text-muted-light': '#8190a6', // slate-300
                 'text-dark': '#1e293b', // slate-800

@@ -39,7 +39,7 @@ const ProjectsCard = ({ project, isEven, inView, contentStaggerVariants }) => {
                         {project.techlist?.map((tech, techIndex) => (
                             <motion.span
                                 key={techIndex}
-                                className='text-text-secondary hover:text-accent transition-colors duration-300'
+                                className='text-text-secondary-dark hover:text-accent transition-colors duration-300'
                                 variants={itemVariants}
                             >
                                 {tech}
@@ -57,7 +57,7 @@ const ProjectsCard = ({ project, isEven, inView, contentStaggerVariants }) => {
                             <a
                                 href={project.url}
                                 target='_blank'
-                                className='text-text-secondary hover:text-accent transition-colors duration-300'
+                                className='text-text-secondary-dark hover:text-accent transition-colors duration-300'
                             >
                                 <svg
                                     className='h-6 w-6'
@@ -75,7 +75,7 @@ const ProjectsCard = ({ project, isEven, inView, contentStaggerVariants }) => {
                         <a
                             href={project.github}
                             target='_blank'
-                            className='text-text-secondary hover:text-accent transition-colors duration-300'
+                            className='text-text-secondary-dark hover:text-accent transition-colors duration-300'
                         >
                             <svg
                                 className='h-6 w-6'
@@ -120,7 +120,7 @@ const ProjectsCard = ({ project, isEven, inView, contentStaggerVariants }) => {
                         {project.techlist?.map((tech, techIndex) => (
                             <motion.span
                                 key={techIndex}
-                                className='text-text-secondary text-sm'
+                                className='text-text-secondary-dark text-sm'
                                 variants={itemVariants}
                             >
                                 {tech}
@@ -135,7 +135,7 @@ const ProjectsCard = ({ project, isEven, inView, contentStaggerVariants }) => {
                             <a
                                 href={project.url}
                                 target='_blank'
-                                className='text-text-secondary hover:text-accent transition-colors duration-300'
+                                className='text-text-secondary-dark hover:text-accent transition-colors duration-300'
                             >
                                 <svg
                                     className='h-6 w-6'
@@ -153,7 +153,7 @@ const ProjectsCard = ({ project, isEven, inView, contentStaggerVariants }) => {
                         <a
                             href={project.github}
                             target='_blank'
-                            className='text-text-secondary hover:text-accent transition-colors duration-300'
+                            className='text-text-secondary-dark hover:text-accent transition-colors duration-300'
                         >
                             <svg
                                 className='h-6 w-6'
