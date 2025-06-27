@@ -117,7 +117,7 @@ export const projects = [
         img: chatBot,
         url: 'https://rach-next-chatbot.vercel.app',
         github: 'https://github.com/rachaeltay/next-chatbot',
-        title: 'Llama 3.3 Chatbot',
+        title: 'Llama 3.3 Chat',
         techlist: [
             'Next.js 14',
             'Typescript',
