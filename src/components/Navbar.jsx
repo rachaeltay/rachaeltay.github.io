@@ -34,16 +34,20 @@ const Navbar = () => {
     return (
         <motion.nav
             className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-                isScrolled
-                    ? 'bg-slate-800/95 backdrop-blur-sm shadow-lg'
-                    : 'bg-transparent'
+                isScrolled ? 'py-2' : 'py-4'
             }`}
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <div className='align-element py-4'>
-                <div className='flex justify-between items-center'>
+            <div className='align-element'>
+                <motion.div
+                    className={`flex justify-between items-center transition-all duration-300 ${
+                        isScrolled
+                            ? 'bg-slate-800/95 backdrop-blur-sm shadow-lg rounded-full px-6 py-3 mx-4'
+                            : 'bg-transparent'
+                    }`}
+                >
                     <motion.div
                         className='text-2xl font-bold text-text-primary'
                         whileHover={{
@@ -122,7 +126,7 @@ const Navbar = () => {
                             )}
                         </AnimatePresence>
                     </motion.button>
-                </div>
+                </motion.div>
 
                 <AnimatePresence>
                     {isOpen && (

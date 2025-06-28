@@ -37,11 +37,11 @@ const About = () => {
                 >
                     <SectionTitle text='code and me' />
                     <p className='text-text-dark mt-8 leading-loose'>
-                        Hello, I'm Rachael Tay, a dedicated software engineer
-                        focused on creating seamless user experiences and
-                        leveraging cutting-edge technologies. I'm driven by a
-                        genuine passion for continuous learning and exploring
-                        new technologies. As a lifelong learner, I embrace
+                        Hello, I'm Rachael Tay, a software engineer focused on
+                        creating seamless user experiences and leveraging
+                        cutting-edge technologies. I'm driven by a genuine
+                        passion for continuous learning and exploring new
+                        technologies. As a lifelong learner, I embrace
                         opportunities to expand my skills. Beyond building
                         applications, I also find joy in crafting custom
                         mechanical keyboards!
