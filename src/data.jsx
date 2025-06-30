@@ -16,12 +16,13 @@ import {
     BiLogoTypescript,
 } from 'react-icons/bi';
 import { TbBrandNextjs, TbBrandFigma } from 'react-icons/tb';
-import simpleSwap from './assets/images/simpleswap-dark-mode.png';
+import simpleSwap from './assets/images/simpleswap/simpleswap.png';
 import chatBot from './assets/images/chatbot.png';
 import orderbook from './assets/images/orderbook.png';
 import diametricStudios from './assets/images/diametric-studios.png';
 import chatMobile from './assets/images/chat/chat-mobile.png';
 import studioMobile from './assets/images/studio/studio-mobile.png';
+import simpleSwapMobile from './assets/images/simpleswap/simpleswap-mobile.png';
 
 export const links = [
     { id: nanoid(), href: '#intro', text: 'intro' },
@@ -145,7 +146,8 @@ export const projects = [
     {
         id: nanoid(),
         img: simpleSwap,
-        url: 'https://rach-simpleswap.netlify.app/',
+        mobileImg: simpleSwapMobile,
+        url: 'https://simpleswap-rho.vercel.app/',
         github: 'https://github.com/rachaeltay/simpleswap',
         title: 'Simple Swap',
         techlist: ['React 17', 'CoinGecko API', 'Material UI'],
@@ -157,12 +159,7 @@ export const projects = [
         url: '',
         github: 'https://github.com/rachaeltay/Angular-Orderbook',
         title: 'Coinbase Live Orderbook',
-        techlist: [
-            'Angular 13.1.3',
-            'Coinbase API',
-            'Material UI',
-            'Typescript',
-        ],
-        text: 'A live orderbook for crypto coins on Coinbase, built with Angular 13.1.3 and Coinbase API',
+        techlist: ['Angular 13+', 'Coinbase API', 'Material UI', 'Typescript'],
+        text: 'A live orderbook for crypto coins on Coinbase, built with Angular 13+ and Coinbase API',
     },
 ];
