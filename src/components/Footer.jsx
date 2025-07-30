@@ -52,7 +52,6 @@ const Footer = () => {
                 </AnimatedElement>
             </div>
 
-            {/* Lottie positioned behind the content */}
             <div className='absolute inset-0 flex justify-center items-center pointer-events-none z-0'>
                 <Lottie
                     animationData={animationData}

@@ -37,7 +37,7 @@ const Hero = () => {
                     </p>
                     <AnimatedElement animation='fadeInUp' delay={0.4}>
                         <p className='mt-4 text-text-secondary leading-relaxed'>
-                            I'm a frontend engineer with a passion for
+                            I'm a software engineer with a passion for
                             intuitive, responsive design. Lately, I've been
                             taking on freelance projects for SMEs to stay sharp
                             and explore new challenges.
