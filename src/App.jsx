@@ -8,6 +8,7 @@ import Skills from './components/Skills';
 const App = () => {
   return (
     <>
+      <div className='grain-overlay'></div>
       <Navbar />
       <Hero />
       <Skills />

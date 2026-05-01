@@ -4,7 +4,7 @@ export const useScrollAnimation = (options = {}) => {
     const {
         threshold = 0.1,
         triggerOnce = true,
-        rootMargin = '0px 0px -50px 0px',
+        rootMargin = '0px 0px -20px 0px',
     } = options;
 
     const [ref, inView] = useInView({

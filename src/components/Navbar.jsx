@@ -6,166 +6,145 @@ import logo from '../assets/rcon.png';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [activeSection, setActiveSection] = useState('intro');
 
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
+
+            const sections = ['intro', 'skills', 'about', 'projects'];
+            const current = sections.find((section) => {
+                const element = document.getElementById(section);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    return rect.top <= 150 && rect.bottom >= 150;
+                }
+                return false;
+            });
+            if (current) setActiveSection(current);
         };
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const handleNavLinkClick = (e, href) => {
+        e.preventDefault();
+        const targetId = href.replace('#', '');
+        const elem = document.getElementById(targetId);
+
+        if (elem) {
+            window.scrollTo({
+                top: elem.offsetTop - 80,
+                behavior: 'smooth',
+            });
+
+            // Clean up hash to prevent jump-back on refresh
+            window.history.replaceState(null, '', window.location.pathname);
+            setIsOpen(false);
+        }
+    };
+
     const navLinks = [
-        { href: '#intro', text: 'home' },
-        { href: '#about', text: 'about' },
-        { href: '#skills', text: 'skills' },
-        { href: '#projects', text: 'projects' },
+        { href: '#intro', id: 'intro', text: 'home' },
+        { href: '#skills', id: 'skills', text: 'skills' },
+        { href: '#about', id: 'about', text: 'about' },
+        { href: '#projects', id: 'projects', text: 'projects' },
     ];
-
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
-
-    const closeMenu = () => {
-        setIsOpen(false);
-    };
 
     return (
         <motion.nav
-            className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-                isScrolled ? 'py-2' : 'py-4'
-            }`}
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.5 }}
+            className='fixed top-6 w-full z-50 px-4'
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-            <div className='align-element'>
-                <motion.div
-                    className={`flex justify-between items-center transition-all duration-300 ${
+            <div className='max-w-fit mx-auto'>
+                <div
+                    className={`flex items-center gap-8 px-6 py-3 rounded-full border transition-all duration-500 ${
                         isScrolled
-                            ? 'bg-slate-800/95 backdrop-blur-sm shadow-lg rounded-full px-6 py-3 mx-4'
-                            : 'bg-transparent'
+                            ? 'bg-slate-900/80 backdrop-blur-md border-slate-700/50 shadow-2xl'
+                            : 'bg-slate-900/40 backdrop-blur-sm border-transparent'
                     }`}
                 >
-                    <motion.div
-                        className='text-2xl font-bold text-text-primary'
-                        whileHover={{
-                            scale: 1.1,
-                            rotate: [0, -10, 10, 0],
-                        }}
-                        transition={{
-                            type: 'spring',
-                            stiffness: 300,
-                            rotate: { duration: 0.5 },
-                        }}
+                    <motion.a
+                        href='#intro'
+                        onClick={(e) => handleNavLinkClick(e, '#intro')}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
                     >
-                        <a
-                            href='#intro'
-                            className='hover:text-accent transition-colors duration-300'
-                        >
-                            <img
-                                src={logo}
-                                alt='logo'
-                                className='w-10 h-10 transition-all duration-500 ease-out hover:drop-shadow-lg hover:drop-shadow-accent/50 cursor-pointer'
-                            />
-                        </a>
-                    </motion.div>
+                        <img
+                            src={logo}
+                            alt='logo'
+                            className='w-8 h-8 hover:drop-shadow-[0_0_8px_rgba(4,217,255,0.5)] transition-all'
+                        />
+                    </motion.a>
 
-                    <div className='hidden md:flex space-x-8'>
-                        {navLinks.map((link, index) => (
+                    <div className='hidden md:flex items-center gap-1'>
+                        {navLinks.map((link) => (
                             <motion.a
                                 key={link.href}
                                 href={link.href}
-                                className='text-text-primary hover:text-accent transition-colors duration-300 relative group'
-                                whileHover={{ y: -2 }}
-                                whileTap={{ scale: 0.95 }}
-                                initial={{ opacity: 0, y: -20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{
-                                    duration: 0.5,
-                                    delay: index * 0.1,
-                                }}
+                                onClick={(e) => handleNavLinkClick(e, link.href)}
+                                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 relative ${
+                                    activeSection === link.id
+                                        ? 'text-accent'
+                                        : 'text-text-secondary hover:text-white'
+                                }`}
+                                whileHover={{ y: -1 }}
                             >
-                                {link.text}
-                                <motion.span
-                                    className='absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full'
-                                    whileHover={{ width: '100%' }}
-                                />
+                                {activeSection === link.id && (
+                                    <motion.div
+                                        layoutId='nav-pill'
+                                        className='absolute inset-0 bg-accent/10 border border-accent/20 rounded-full'
+                                        transition={{
+                                            type: 'spring',
+                                            bounce: 0.2,
+                                            duration: 0.6,
+                                        }}
+                                    />
+                                )}
+                                <span className='relative z-10'>
+                                    {link.text}
+                                </span>
                             </motion.a>
                         ))}
                     </div>
 
-                    <motion.button
-                        className='md:hidden text-text-primary hover:text-accent transition-colors duration-300'
-                        onClick={toggleMenu}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
+                    <button
+                        className='md:hidden text-text-primary p-1'
+                        onClick={() => setIsOpen(!isOpen)}
                     >
-                        <AnimatePresence mode='wait'>
-                            {isOpen ? (
-                                <motion.div
-                                    key='close'
-                                    initial={{ rotate: -90, opacity: 0 }}
-                                    animate={{ rotate: 0, opacity: 1 }}
-                                    exit={{ rotate: 90, opacity: 0 }}
-                                    transition={{ duration: 0.2 }}
-                                >
-                                    <FaTimes size={24} />
-                                </motion.div>
-                            ) : (
-                                <motion.div
-                                    key='menu'
-                                    initial={{ rotate: 90, opacity: 0 }}
-                                    animate={{ rotate: 0, opacity: 1 }}
-                                    exit={{ rotate: -90, opacity: 0 }}
-                                    transition={{ duration: 0.2 }}
-                                >
-                                    <FaBars size={24} />
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </motion.button>
-                </motion.div>
-
-                <AnimatePresence>
-                    {isOpen && (
-                        <motion.div
-                            className='md:hidden'
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            <motion.div
-                                className='py-4 space-y-4'
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 0.1 }}
-                            >
-                                {navLinks.map((link, index) => (
-                                    <motion.a
-                                        key={link.href}
-                                        href={link.href}
-                                        onClick={closeMenu}
-                                        className='block text-text-primary hover:text-accent transition-colors duration-300 text-lg font-medium'
-                                        initial={{ opacity: 0, x: -20 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{
-                                            duration: 0.3,
-                                            delay: index * 0.1,
-                                        }}
-                                        whileHover={{ x: 10 }}
-                                        whileTap={{ scale: 0.95 }}
-                                    >
-                                        {link.text}
-                                    </motion.a>
-                                ))}
-                            </motion.div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                        {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+                    </button>
+                </div>
             </div>
+
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        className='absolute top-20 left-4 right-4 bg-slate-900/95 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-6 md:hidden shadow-2xl'
+                    >
+                        <div className='flex flex-col gap-4'>
+                            {navLinks.map((link) => (
+                                <a
+                                    key={link.href}
+                                    href={link.href}
+                                    onClick={(e) =>
+                                        handleNavLinkClick(e, link.href)
+                                    }
+                                    className='text-xl font-display font-medium text-text-primary hover:text-accent transition-colors'
+                                >
+                                    {link.text}
+                                </a>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </motion.nav>
     );
 };

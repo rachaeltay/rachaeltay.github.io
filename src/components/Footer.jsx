@@ -1,66 +1,76 @@
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { useScrollAnimation, hoverScale } from '../hooks/useScrollAnimation';
-import AnimatedElement from './AnimatedElement';
-import Lottie from 'lottie-react';
-import animationData from '../assets/lottie/popupcat.json';
 
 const Footer = () => {
-    const { ref, inView } = useScrollAnimation();
+    const currentYear = new Date().getFullYear();
+
+    const socialLinks = [
+        {
+            href: 'https://github.com/rachaeltay',
+            icon: <FaGithub />,
+            label: 'GitHub',
+        },
+        {
+            href: 'https://www.linkedin.com/in/rachael-tay-/',
+            icon: <FaLinkedin />,
+            label: 'LinkedIn',
+        },
+        {
+            href: 'mailto:rachael.tay22@gmail.com',
+            icon: <FaEnvelope />,
+            label: 'Email',
+        },
+    ];
 
     return (
-        <footer className='bg-gradient-to-b from-slate-600 to-slate-700 py-16 relative overflow-hidden'>
-            <div className='align-element relative z-10'>
-                <motion.div
-                    ref={ref}
-                    className='flex flex-col md:flex-row justify-between items-center gap-4'
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={
-                        inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
-                    }
-                    transition={{ duration: 0.8 }}
-                >
-                    <AnimatedElement animation='fadeInLeft' delay={0.2}>
-                        <h4 className='text-text-primary text-xl font-semibold'>
-                            Let's connect
-                        </h4>
-                        <p className='text-text-secondary mt-2'>
-                            Always up for a chat about tech, cats, or anything
-                            interesting!
-                        </p>
-                    </AnimatedElement>
+        <footer className='bg-slate-950 py-24 relative overflow-hidden'>
+            <div className='absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent'></div>
 
-                    <AnimatedElement animation='fadeInRight' delay={0.4}>
-                        <motion.a
-                            href='mailto:rachael.tay@example.com'
-                            className='inline-block bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent-light transition-colors duration-300 shadow-lg hover:shadow-xl'
-                            {...hoverScale}
-                        >
-                            Get In Touch
-                        </motion.a>
-                    </AnimatedElement>
-                </motion.div>
-
-                <AnimatedElement
-                    animation='fadeInUp'
-                    delay={0.6}
-                    className='border-t border-slate-500 mt-8 pt-8 text-center'
-                >
-                    <p className='text-text-secondary'>
-                        © {new Date().getFullYear()} Rachael Tay. All rights
-                        reserved.
+            <div className='align-element flex flex-col items-center gap-12 relative z-10'>
+                <div className='flex flex-col items-center gap-6'>
+                    <motion.h2
+                        className='text-3xl lg:text-5xl font-bold text-white tracking-tight font-display text-center'
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        Let's build something exceptional.
+                    </motion.h2>
+                    <p className='text-text-secondary-dark text-center max-w-md text-lg'>
+                        Up for a chat about tech or cats!
                     </p>
-                </AnimatedElement>
+                </div>
+
+                <div className='flex gap-6'>
+                    {socialLinks.map((link, index) => (
+                        <motion.a
+                            key={index}
+                            href={link.href}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='p-4 rounded-xl bg-slate-900/50 border border-slate-800 text-text-secondary hover:text-accent hover:border-accent/50 hover:bg-accent/5 transition-all duration-300 shadow-xl group'
+                            whileHover={{ y: -5 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <span className='text-2xl transform group-hover:scale-110 transition-transform duration-300 block'>
+                                {link.icon}
+                            </span>
+                        </motion.a>
+                    ))}
+                </div>
+
+                <div className='flex flex-col items-center gap-6 border-t border-slate-900 pt-12 w-full'>
+                    <p className='text-text-muted text-xs font-medium tracking-[0.3em] uppercase'>
+                        © {currentYear} Rachael Tay
+                    </p>
+                </div>
             </div>
 
-            <div className='absolute inset-0 flex justify-center items-center pointer-events-none z-0'>
-                <Lottie
-                    animationData={animationData}
-                    loop={true}
-                    autoplay={true}
-                    style={{ height: '100%', width: 'auto', maxWidth: '50%' }}
-                />
-            </div>
+            <div className='absolute bottom-0 right-0 w-96 h-96 bg-accent/5 blur-[120px] rounded-full'></div>
+            <div className='absolute top-0 left-0 w-64 h-64 bg-slate-800/10 blur-[100px] rounded-full'></div>
         </footer>
     );
 };
+
 export default Footer;
