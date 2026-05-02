@@ -18,11 +18,12 @@ import {
 import { TbBrandNextjs, TbBrandFigma } from 'react-icons/tb';
 import simpleSwap from './assets/images/simpleswap/simpleswap.png';
 import chat from './assets/images/chat/chat.png';
-import orderbook from './assets/images/orderbook.png';
+import orderbook from './assets/images/orderbook/orderbook.png';
 import studio from './assets/images/studio/studio.png';
 import chatMobile from './assets/images/chat/chat-mobile.png';
 import studioMobile from './assets/images/studio/studio-mobile.png';
 import simpleSwapMobile from './assets/images/simpleswap/simpleswap-mobile.png';
+import orderbookMobile from './assets/images/orderbook/orderbook-mobile.png';
 
 export const links = [
     { id: nanoid(), href: '#intro', text: 'intro' },
@@ -178,6 +179,7 @@ export const projects = [
     {
         id: nanoid(),
         img: orderbook,
+        mobileImg: orderbookMobile,
         url: '',
         github: 'https://github.com/rachaeltay/Angular-Orderbook',
         title: 'Coinbase Live Orderbook',

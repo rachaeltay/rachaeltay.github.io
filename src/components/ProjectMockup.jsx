@@ -14,11 +14,11 @@ const ProjectMockup = ({ image, mobileImg, title, isEven }) => {
             >
                 <motion.div
                     className='relative bg-slate-800 rounded-xl p-3 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.5)] border border-slate-700/50'
-                    whileHover={{ 
+                    whileHover={{
                         rotateY: isEven ? 5 : -5,
                         rotateX: 2,
                         scale: 1.01,
-                        transition: { duration: 0.4 }
+                        transition: { duration: 0.4 },
                     }}
                 >
                     <div className='bg-slate-900 rounded-lg overflow-hidden shadow-inner'>
@@ -54,19 +54,24 @@ const ProjectMockup = ({ image, mobileImg, title, isEven }) => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.5 }}
                 >
-                    <motion.div 
-                        className='bg-slate-900 rounded-[2.5rem] p-2.5 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.7)] border border-slate-700/50'
-                        whileHover={{ y: -10, rotateZ: isEven ? 2 : -2, transition: { duration: 0.3 } }}
+                    <motion.div
+                        className='relative bg-gradient-to-b from-slate-700 to-slate-950 rounded-[2rem] p-1 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.7)] border border-slate-600/60'
+                        whileHover={{
+                            y: -10,
+                            rotateZ: isEven ? 2 : -2,
+                            transition: { duration: 0.3 },
+                        }}
                     >
-                        <div className='absolute top-4 left-1/2 -translate-x-1/2 w-16 h-4 bg-slate-900 rounded-full z-20 flex items-center justify-center'>
-                            <div className='w-8 h-1 bg-slate-800 rounded-full'></div>
+                        <div className='flex h-1 items-center justify-center gap-1'>
+                            <div className='h-0.5 w-5 rounded-full bg-slate-500/80'></div>
+                            <div className='h-1 w-1 rounded-full bg-slate-500/80'></div>
                         </div>
 
-                        <div className='bg-slate-950 rounded-[2rem] overflow-hidden border border-slate-800/50'>
+                        <div className='bg-slate-950 rounded-[1.55rem] overflow-hidden border border-slate-800/60 aspect-[532/1011]'>
                             <motion.img
                                 src={mobileImage}
                                 alt={`${title} mobile`}
-                                className='block w-full h-auto object-contain'
+                                className='block w-full h-full object-contain'
                             />
                         </div>
                     </motion.div>
