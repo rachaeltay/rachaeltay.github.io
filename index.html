@@ -3,6 +3,13 @@
 
 <head>
     <meta charset="UTF-8" />
+    <script>
+        (() => {
+            let theme = 'dark';
+            try { if (localStorage.getItem('portfolio-theme') === 'light') theme = 'light'; } catch {}
+            document.documentElement.dataset.theme = theme;
+        })();
+    </script>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -13,11 +20,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Rachael Tay, Senior Software Engineer at Grab in Singapore. Explore full-stack work across consumer and clinical platforms, selected projects, and technical skills." />
+    <meta name="description" content="Rachael Tay, Senior Software Engineer at Grab. Explore full-stack work across consumer and clinical platforms, selected projects, and technical skills." />
     <meta name="theme-color" content="#0f172a" />
     <title>Rachael Tay | Senior Software Engineer</title>
-  <script type="module" crossorigin src="/assets/index-cee7ea0e.js"></script>
-  <link rel="stylesheet" href="/assets/index-e8aa7322.css">
+  <script type="module" crossorigin src="/assets/index-f1036a6f.js"></script>
+  <link rel="stylesheet" href="/assets/index-cfb7c786.css">
 </head>
 
 <body>
